@@ -8,6 +8,11 @@ export default class PCHeader extends React.Component {
             current:"top"
         }
     }
+    handleClick (e){
+        this.setState({
+            current:e.key
+        })
+    };
     render(){
         return (
             <header>
@@ -20,7 +25,7 @@ export default class PCHeader extends React.Component {
                         </a>
                     </Col>
                     <Col span={16}>
-                        <Menu mode="horizontal" selectedKeys={[this.state.current]}>
+                        <Menu mode="horizontal" selectedKeys={[this.state.current]} onClick={this.handleClick.bind(this)}>
                             <Menu.Item  key="top" >
                                 <Icon type="appstore"/>头条
                             </Menu.Item>
