@@ -1,18 +1,22 @@
-.logo{
+.logo {
   align-items: center;
   display: flex;
 }
 
-.logo img{
+.logo img {
   width: 48px;
   height: 48px;
 }
 
-.logo span{
+.logo span {
   font-size: 24px;
   padding-left: 5px;
 }
-.footer{
+
+.footer {
   text-align: center;
 }
 
+.register {
+  float: right !important;
+}
