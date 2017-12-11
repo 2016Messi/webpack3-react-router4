@@ -136,7 +136,6 @@ import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
                             <Menu.Item key="keji">
                                 <Icon type="appstore" />科技
                             </Menu.Item>
-
                             {userShow}
                             <Modal title="用户中心" wrapClassName="vertical-center-modal" visible={this.state.modalVisible} onOk={()=>this.setModalVisible(false)} onText="关闭" onCancel={()=>this.setModalVisible(false)}>
                                 <Tabs type="card" onChange={this.callback.bind(this)}>
@@ -169,7 +168,6 @@ import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
                             </Modal>
                         </Menu>
                     </Col>
-
                     <Col span={2}></Col>
                 </Row>
             </header>
