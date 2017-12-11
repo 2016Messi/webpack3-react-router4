@@ -62,7 +62,7 @@ import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
     };
     handleClick (e){
         if(e.key=="register"){
-            this.setState({current:"register"});
+            // this.setState({current:"register"});
             this.setModalVisible(true);
         }else{
             this.setState({
