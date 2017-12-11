@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col} from 'antd';
 import {Tabs, Carousel} from 'antd';
 const TabPane = Tabs.TabPane;
-
+import PCNewsBlock from './PC_news_block.js'
 export default class PCNewContainer extends React.Component{
     render(){
         const settings = {
@@ -27,6 +27,11 @@ export default class PCNewContainer extends React.Component{
                                 </Carousel>
                             </div>
                         </div>
+                        <Tabs type="card" className="tabs_news">
+                            <TabPane tab={"新闻头条"} key="1">
+                                <PCNewsBlock count={10} type="top" bordered="false" width="100%"></PCNewsBlock>
+                            </TabPane>
+                        </Tabs>
                     </Col>
                     <Col span={2}></Col>
                 </Row>
