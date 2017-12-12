@@ -27,11 +27,16 @@ export default class PCNewContainer extends React.Component{
                                 </Carousel>
                             </div>
                         </div>
+
                         <Tabs type="card" className="tabs_news">
                             <TabPane tab={"新闻头条"} key="1">
-                                <PCNewsBlock count={10} type="top" bordered="false" width="100%"></PCNewsBlock>
+                                {/*<PCNewsBlock count={10} type="top" width="100%" bordered="false"/>*/}
+                            </TabPane>
+                            <TabPane tab="国际" key="2">
+                                {/*<PCNewsBlock count={10} type="guoji" width="100%" bordered="false"/>*/}
                             </TabPane>
                         </Tabs>
+
                     </Col>
                     <Col span={2}></Col>
                 </Row>

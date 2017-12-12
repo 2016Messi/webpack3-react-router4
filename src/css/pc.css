@@ -75,6 +75,8 @@
     text-align: left;
     font-size: 14px;
     margin-bottom: 10px;
+    width: 460px;
+    overflow: hidden;
 }
 
 .topNewsList a {
@@ -88,11 +90,7 @@
     float: left;
 }
 
-.tabs_product {
-    width: 300px;
-    padding-left: 10px;
-    float: left;
-}
+
 
 .tabs_news li {
     height: 27px;
@@ -100,7 +98,7 @@
     font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
-    width: 417px;
+    width: 400px;
     float: left;
     text-overflow: ellipsis;
 }

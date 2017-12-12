@@ -31,7 +31,6 @@ export default class PCNewsBlock extends React.Component{
                             {newsItem.title}
                         </Link>
                     </BrowserRouter>
-
                 </li>
             ))
             :
