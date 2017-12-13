@@ -16,9 +16,11 @@ export default class PCNewsBlock extends React.Component{
             this.props.type + "&count=" +
             this.props.count, myFetchOptions).
         then(response => response.json()).
-        then(json =>{
+        then(json =>(
+
                 this.setState({news: json})
-        }
+            )
+
             );
     }
     render(){
