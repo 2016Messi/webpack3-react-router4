@@ -92,7 +92,6 @@ import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
             <div id="mobileheader">
                 <header>
                     <img src="./src/image/logo.png" alt="logo"/>
-
                     <span>Hot News</span>
                     {userShow}
                 </header>
