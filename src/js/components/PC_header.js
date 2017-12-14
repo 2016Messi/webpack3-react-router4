@@ -90,7 +90,7 @@ import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
     render(){
         let {getFieldProps} = this.props.form;
         const userShow = this.state.hasLogined ?
-                <MenuItem key="logout" class="register">
+                <MenuItem key="logout" className="register">
                     <Button type="primary" htmlType="button">{this.state.userNickName}</Button>
                     &nbsp;&nbsp;
                         <HashRouter target="_blank">

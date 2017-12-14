@@ -128,4 +128,5 @@
 
 .register{
     float: right !important;
+    padding-right: 10px !important;
 }

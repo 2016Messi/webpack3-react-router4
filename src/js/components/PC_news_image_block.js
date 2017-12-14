@@ -21,13 +21,14 @@ export default class PCNewsImgBlock extends React.Component{
             }
         );
     }
-    changeOnMouseEnter(style) {
-        console.log(this.refs.index);
-        let I=this.refs.index;
+    changeOnMouseEnter(e) {
+        var x="hover"+e;
+        this.refs[x].style.color="red";
     }
-
-
-
+    changeOnMouseOut(e){
+        var x="hover"+e;
+        this.refs[x].style.color="black";
+    }
     render(){
         const styleImage = {
             display: "block",
@@ -55,22 +56,24 @@ export default class PCNewsImgBlock extends React.Component{
         };
         const news = this.state.news;
         const newsList = news.length ?
-            news.map((newsItem,index)=>(
-                <div key={index} className={"imageblock"} ref="index" onMouseEnter={()=>this.changeOnMouseEnter()}>
-                    <BrowserRouter>
-                        <Link to={`details/${newsItem.uniquekey}`} target="_blank">
+            news.map((newsItem,index)=>{
+                return(
+                    <div key={index} className={"imageblock"}  onMouseEnter={this.changeOnMouseEnter.bind(this,index)} onMouseLeave={this.changeOnMouseOut.bind(this,index)}>
+                        <BrowserRouter>
+                            <Link to={`details/${newsItem.uniquekey}`} target="_blank">
 
-                            <div className="custom-image">
-                                <img style={styleImage} src={newsItem.thumbnail_pic_s} alt=""/>
-                            </div>
-                            <div className="custom-card">
-                                <h3 ref="hoverH3" style={styleH3}>{newsItem.title}</h3>
-                                <p style={styleP}>{newsItem.author_name}</p>
-                            </div>
-                        </Link>
-                    </BrowserRouter>
-                </div>
-            ))
+                                <div className="custom-image">
+                                    <img style={styleImage} src={newsItem.thumbnail_pic_s} alt=""/>
+                                </div>
+                                <div className="custom-card">
+                                    <h3 ref={"hover"+index} style={styleH3}>{newsItem.title}</h3>
+                                    <p style={styleP}>{newsItem.author_name}</p>
+                                </div>
+                            </Link>
+                        </BrowserRouter>
+                    </div>
+                    )
+                    })
             :
             "nothing";
 
