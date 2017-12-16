@@ -1,76 +1,80 @@
 .logo {
-  align-items: center;
-  display: flex;
+    align-items: center;
+    display: flex;
 }
 
 .logo img {
-  width: 48px;
-  height: 48px;
+    width: 48px;
+    height: 48px;
 }
 
 .logo span {
-  font-size: 24px;
-  padding-left: 5px;
+    font-size: 24px;
+    padding-left: 5px;
 }
 
 .footer {
-  text-align: center;
+    text-align: center;
 }
 
 .register {
-  float: right !important;
-}
-.ant-menu-horizontal>.ant-menu-item>a, .ant-menu-horizontal>.ant-menu-submenu>a {
-  display: inline-block !important;
+    float: right !important;
 }
 
-.container{
-  padding-top: 10px;
+.ant-menu-horizontal > .ant-menu-item > a, .ant-menu-horizontal > .ant-menu-submenu > a {
+    display: inline-block !important;
+}
+
+.container {
+    padding-top: 10px;
 }
 
 .leftContainer {
-  width: 400px;
+    width: 400px;
     float: left;
     margin-right: 10px;
 }
 
 .carousel {
-  width: 400px;
+    width: 400px;
 
 }
 
-.ant-card{
-  margin-top: 5px !important;
+.ant-card {
+    margin-top: 5px !important;
 }
 
-.ant-card-head-title{
-  text-align: left !important;
+.ant-card-head-title {
+    text-align: left !important;
 }
-.ant-card-body{
-  text-align: left !important;
+
+.ant-card-body {
+    text-align: left !important;
 }
+
 .usercenter {
-  float: right !important;
+    float: right !important;
 }
 
 #container {
-  text-align: center !important;
+    text-align: center !important;
 }
 
 .container {
 
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .carousel {
-  width: 400px;
+    width: 400px;
 
 }
 
 .carousel img {
-  width: 400px;
-  height: 260px;
+    width: 400px;
+    height: 260px;
 }
+
 .topNewsList {
     float: left;
     text-align: left;
@@ -78,14 +82,16 @@
     margin-bottom: 10px;
     width: 400px;
 }
-.topNewsImgListBox{
+
+.topNewsImgListBox {
     float: left;
     text-align: left;
     font-size: 14px;
     margin-bottom: 10px;
     margin-top: 2px;
 }
-.topNewsImgList{
+
+.topNewsImgList {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -100,12 +106,15 @@
     width: 400px;
     float: left;
 }
-.tabs_news ul{
+
+.tabs_news ul {
     margin-left: -50px;
 }
-.tabs_news a:hover{
-    color: red!important; ;
+
+.tabs_news a:hover {
+    color: red !important;;
 }
+
 .tabs_news li {
     height: 31px;
     line-height: 27px;
@@ -115,10 +124,12 @@
     width: 380px;
     text-overflow: ellipsis;
 }
+
 .imageblock {
     margin-left: 7px;
     margin-right: 7px;
 }
+
 .custom-card {
 
 }
@@ -127,7 +138,7 @@
     color: #999;
 }
 
-.register{
+.register {
     float: right !important;
     padding-right: 10px !important;
 }
@@ -257,31 +268,28 @@
 .productlinks-fold-163 {
     margin-top: 1px;
 }
+
 .tabs_product {
-    width: 300px!important;
+    width: 300px !important;
     padding-left: 10px !important;
     float: left;
 }
-.container{
-    text-align: center;
+
+.container {
+    /*text-align: center;*/
 }
 
 .article {
     text-align: justify
 }
 
-.article-content .img .img-wrap,.hot-news img {
-    background-repeat: no-repeat;
-    background-position: center
-}
-
-.hn-title h2,.in-title h2 {
+.hn-title h2, .in-title h2 {
     z-index: 1;
     font-weight: 600
 }
 
 #title {
-    margin: 16px 16px 0!important;
+    margin: 16px 16px 0 !important;
     border-bottom: 1px solid #e5e5e5
 }
 
@@ -289,7 +297,7 @@
     margin-bottom: .2rem
 }
 
-#title .title,.article-title .title {
+#title .title, .article-title .title {
     font-size: 1.44rem;
     line-height: 1.4em
 }
@@ -306,7 +314,7 @@
 
 .article-content .section {
     line-height: 1.6em;
-    margin-bottom: .3rem;
+    margin-bottom: .8rem;
     margin-top: 0
 }
 
@@ -314,35 +322,8 @@
     font-size: 0.36rem
 }
 
-.article-content .img {
-    margin-bottom: -3.7rem;
-}
-
-.article-content .img .img-wrap {
-    position: relative;
-    display: block;
-    width: 400px;
-    height: 400px;
-
-    overflow: hidden;
-    background-size: 40%
-}
-
 #content {
     margin: .3rem 16px 16px
-}
-
-.article-content .img .img-wrap img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 100%;
-}
-
-.article-content .img .txt-wrap {
-    font-size: .36rem;
-    line-height: 2em
 }
 
 .article-content .app-download {
@@ -366,4 +347,8 @@
     top: 50%;
     margin-top: -.21rem;
     left: .66rem
+}
+
+.img-wrap {
+    padding-bottom: 0 !important;
 }
