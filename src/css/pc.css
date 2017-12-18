@@ -280,7 +280,8 @@
 }
 
 .article {
-    text-align: justify
+    text-align: justify;
+    margin-top: 10px!important;
 }
 
 .hn-title h2, .in-title h2 {
@@ -289,7 +290,7 @@
 }
 
 #title {
-    margin: 16px 16px 0 !important;
+    margin: 16px 16px 0 ;
     border-bottom: 1px solid #e5e5e5
 }
 

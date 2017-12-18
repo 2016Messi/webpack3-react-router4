@@ -6,11 +6,13 @@ export default class PCNewsImgBlock extends React.Component {
     constructor() {
         super();
         this.state = {
-            news: ""
+            news: "",
+            type:""
         }
     }
 
     componentWillMount() {
+        console.log(this.props.type);
         var myFetchOptions = {
             method: 'GET'
         };
@@ -64,8 +66,7 @@ export default class PCNewsImgBlock extends React.Component {
                     <div key={index} className={"imageblock"} onMouseEnter={this.changeOnMouseEnter.bind(this, index)}
                          onMouseLeave={this.changeOnMouseOut.bind(this, index)}>
                         <BrowserRouter>
-                            <Link to={`details/${newsItem.uniquekey}`} target="_blank">
-
+                            <Link to={`details/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
                                 <div className="custom-image">
                                     <img style={styleImage} src={newsItem.thumbnail_pic_s} alt=""/>
                                 </div>

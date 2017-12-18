@@ -16,8 +16,11 @@ export default class PCNewsBlock extends React.Component{
             this.props.type + "&count=" +
             this.props.count, myFetchOptions).
         then(response => response.json()).
-        then(json =>(this.setState({news: json}))
-            );
+        then(json =>{
+            this.setState({news: json})
+        })
+
+
     }
     render(){
         const news = this.state.news;
@@ -25,7 +28,7 @@ export default class PCNewsBlock extends React.Component{
             news.map((newsItem,index)=>(
                 <li key={index}>
                     <BrowserRouter>
-                        <Link to={`details/${newsItem.uniquekey}`} target="_blank">
+                        <Link to={`details/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
                             {newsItem.title}
                         </Link>
                     </BrowserRouter>
