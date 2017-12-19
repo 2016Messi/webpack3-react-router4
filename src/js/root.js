@@ -6,19 +6,19 @@ import PCIndex from './components/PC_index';
 import MobileIndex from './components/mobile_index';
 import MobileNewsDetails from './components/moblie_news_details';
 import PCNewsDetails from './components/PC_news_details';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch,HashRouter} from 'react-router-dom';
 
 class Root extends React.Component {
     render() {
         return (
             <div>
                 <MediaQuery query='(min-device-width:1224px)'>
-                    <BrowserRouter  >
+                    <HashRouter  >
                         <Switch>
                             <Route exact path="/" component={PCIndex}></Route>
                             <Route path="/details/:realtype/:uniquekey" component={PCNewsDetails}></Route>
                         </Switch>
-                    </BrowserRouter>
+                    </HashRouter>
                 </MediaQuery>
                 <MediaQuery query='(max-device-width:1224px)'>
                     <BrowserRouter  >

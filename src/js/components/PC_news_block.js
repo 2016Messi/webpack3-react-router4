@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from 'antd';
-import {Router, Route, Link, BrowserRouter} from 'react-router-dom';
+import {Router, Route, Link, BrowserRouter, HashRouter} from 'react-router-dom';
 export default class PCNewsBlock extends React.Component{
     constructor(){
         super();
@@ -27,11 +27,11 @@ export default class PCNewsBlock extends React.Component{
         const newsList = news.length ?
             news.map((newsItem,index)=>(
                 <li key={index}>
-                    <BrowserRouter>
-                        <Link to={`details/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
+                    <HashRouter basename="/details">
+                        <Link to={`/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
                             {newsItem.title}
                         </Link>
-                    </BrowserRouter>
+                    </HashRouter>
                 </li>
             ))
             :

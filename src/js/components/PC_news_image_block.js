@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from 'antd';
-import {Router, Route, Link, BrowserRouter} from 'react-router-dom';
+import {Router, Route, Link, BrowserRouter,HashRouter} from 'react-router-dom';
 
 export default class PCNewsImgBlock extends React.Component {
     constructor() {
@@ -65,8 +65,8 @@ export default class PCNewsImgBlock extends React.Component {
                 return (
                     <div key={index} className={"imageblock"} onMouseEnter={this.changeOnMouseEnter.bind(this, index)}
                          onMouseLeave={this.changeOnMouseOut.bind(this, index)}>
-                        <BrowserRouter>
-                            <Link to={`details/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
+                        <HashRouter basename="/details">
+                            <Link to={`/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
                                 <div className="custom-image">
                                     <img style={styleImage} src={newsItem.thumbnail_pic_s} alt=""/>
                                 </div>
@@ -75,7 +75,7 @@ export default class PCNewsImgBlock extends React.Component {
                                     <p style={styleP}>{newsItem.author_name}</p>
                                 </div>
                             </Link>
-                        </BrowserRouter>
+                        </HashRouter>
                     </div>
                 )
             })

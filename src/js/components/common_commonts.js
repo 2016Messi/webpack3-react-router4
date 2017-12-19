@@ -25,6 +25,9 @@ class CommonComments extends React.Component {
             .then(response => response.json())
             .then(json => {
                 console.log(json);
+                if (json.length>10){
+                    json.splice(3,json.length-4);
+                }
                 this.setState({comments: json});
             });
     };
@@ -68,8 +71,8 @@ class CommonComments extends React.Component {
                             <FormItem label={"您的评论"}>
                                 <TextArea type="textarea" placeholder={"请输入评论内容"}
                                           {...getFieldProps('remark', {initialValue: ''})}/>
-                                <Button type={"primary"} htmlType={"submit"}>提交评论</Button>
                             </FormItem>
+                            <Button type="primary" htmlType="submit">提交评论</Button>
                         </Form>
                     </Col>
                 </Row>
