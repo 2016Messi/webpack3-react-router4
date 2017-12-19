@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row, Col} from 'antd';
-import {Menu, Icon, Tabs, message, Form, Input, Button, Checkbox, Modal} from 'antd';
+import {Menu, Icon, Tabs, message, Form, Input, Button, Pagination , Modal} from 'antd';
 
 const FormItem = Form.Item;
 const MenuItem = Menu.Item;
@@ -54,7 +54,7 @@ class PCHeader extends React.Component {
             .then(response => response.json())
             .then(json => {
                 this.setState({userNickName: json.NickUserName, userid: json.UserId});
-                console.log(json)
+                console.log(json);
                 localStorage.userid = json.UserId;
                 localStorage.userNickName = json.NickUserName;
             });
