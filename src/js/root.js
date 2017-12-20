@@ -21,12 +21,12 @@ class Root extends React.Component {
                     </HashRouter>
                 </MediaQuery>
                 <MediaQuery query='(max-device-width:1224px)'>
-                    <BrowserRouter  >
+                    <HashRouter  >
                         <Switch>
                             <Route exact path="/" component={MobileIndex}></Route>
                             <Route path="/details/:realtype/:uniquekey" component={MobileNewsDetails}></Route>
                         </Switch>
-                    </BrowserRouter>
+                    </HashRouter>
                 </MediaQuery>
 
             </div>

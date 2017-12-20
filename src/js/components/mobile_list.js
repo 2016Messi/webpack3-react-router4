@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row, Col} from 'antd';
-import {Router, Route, Link, BrowserRouter} from 'react-router-dom';
+import {Router, HashRouter, Link, BrowserRouter} from 'react-router-dom';
 
 export default class MobileList extends React.Component {
     constructor() {
@@ -28,8 +28,8 @@ export default class MobileList extends React.Component {
         const newsList = news.length ?
             news.map((newsItem, index) => (
                 <section key={index} className="m_article list-item special_section clearfix">
-                    <BrowserRouter>
-                        <Link to={`details/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
+                    <HashRouter basename="/details">
+                        <Link to={`/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
                             <div className="m_article_img">
                                 <img src={newsItem.thumbnail_pic_s} alt={newsItem.title}/>
                             </div>
@@ -45,7 +45,7 @@ export default class MobileList extends React.Component {
                                 </div>
                             </div>
                         </Link>
-                    </BrowserRouter>
+                    </HashRouter>
                 </section>
             ))
             :
