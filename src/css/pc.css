@@ -24,7 +24,9 @@
 .ant-menu-horizontal > .ant-menu-item > a, .ant-menu-horizontal > .ant-menu-submenu > a {
     display: inline-block !important;
 }
+.ant-btn-primary{
 
+}
 .container {
     padding-top: 10px;
     text-align: center;

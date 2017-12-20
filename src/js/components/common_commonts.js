@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Menu, Col, Tabs, Row, Form, Input, Button, Card, Modal} from 'antd';
+import {Menu, Col, Tabs, Row, Form, Input, Button, Card, notification} from 'antd';
 
 const {TextArea} = Input;
 const FormItem = Form.Item;
@@ -13,9 +13,9 @@ class CommonComments extends React.Component {
         super();
         this.state = {
             comments: ''
+            // collect:'收藏该文章'
         }
     }
-
     componentDidMount() {
         var myFetchOptions = {
             method: 'GET'
@@ -24,10 +24,6 @@ class CommonComments extends React.Component {
             this.props.uniquekey, myFetchOptions)
             .then(response => response.json())
             .then(json => {
-                console.log(json);
-                if (json.length>10){
-                    json.splice(3,json.length-4);
-                }
                 this.setState({comments: json});
             });
     };
@@ -49,7 +45,23 @@ class CommonComments extends React.Component {
                 this.componentDidMount();
             })
     }
+    addUserCollection(){
+        var myFetchOption = {
+            method : 'GET'
+        };
+        if(localStorage.userid){
+            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid="+localStorage.userid+"&uniquekey"+this.props.uniquekey,myFetchOption)
+                .then(response => response.json())
+                .then(json =>{
+                    //收藏成功以后进行一下全局的提醒
+                    notification['success']({message: 'ReactNews提醒', description: '收藏此文章成功'});
 
+                })
+        }else{
+            notification['error']({message: 'ReactNews提醒', description: '请先登陆账号'});
+        }
+
+    }
     render() {
         let {getFieldProps} = this.props.form;
         const {comments} = this.state;
@@ -73,6 +85,8 @@ class CommonComments extends React.Component {
                                           {...getFieldProps('remark', {initialValue: ''})}/>
                             </FormItem>
                             <Button type="primary" htmlType="submit">提交评论</Button>
+                            &nbsp;&nbsp;
+                            <Button type="primary" htmlType="button" onClick={this.addUserCollection.bind(this)}>收藏该文章</Button>
                         </Form>
                     </Col>
                 </Row>

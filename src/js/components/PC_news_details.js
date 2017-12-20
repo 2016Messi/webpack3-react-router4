@@ -68,6 +68,7 @@ export default class PCNewsDetails extends React.Component {
                         <div className="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
                         <hr/>
                         <CommonComments uniquekey={this.props.match.params.uniquekey} />
+
                     </Col>
                     <Col span={6}>
                         <PCNewsImgBlock count={30} type={this.state.newsType} width={"100%"} cartTitle={this.props.match.params.realtype+"新闻"} imageWidth="102px"/>
