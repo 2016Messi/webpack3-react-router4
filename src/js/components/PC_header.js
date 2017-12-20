@@ -101,8 +101,10 @@ class PCHeader extends React.Component {
             <MenuItem key="logout" className="register">
                 <Button type="primary" htmlType="button">{this.state.userNickName}</Button>
                 &nbsp;&nbsp;
-                <HashRouter target="_blank">
-                    <Button type="dashed" htmlType="button">个人中心</Button>
+                <HashRouter basename="/">
+                    <Link to={`PCUserCenter/`} target="_blank">
+                        <Button type="dashed" htmlType="button">个人中心</Button>
+                    </Link>
                 </HashRouter>
                 &nbsp;&nbsp;
                 <Button type="ghost" htmlType="button" onClick={this.logout.bind(this)}>退出</Button>
