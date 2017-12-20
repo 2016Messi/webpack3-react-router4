@@ -65,8 +65,8 @@ export default class PCNewsImgBlock extends React.Component {
                 return (
                     <div key={index} className={"imageblock"} onMouseEnter={this.changeOnMouseEnter.bind(this, index)}
                          onMouseLeave={this.changeOnMouseOut.bind(this, index)}>
-                        <HashRouter basename="/details">
-                            <Link to={`/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
+                        <HashRouter basename="/">
+                            <Link to={`details/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
                                 <div className="custom-image">
                                     <img style={styleImage} src={newsItem.thumbnail_pic_s} alt=""/>
                                 </div>

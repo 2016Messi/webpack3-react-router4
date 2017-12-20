@@ -28,8 +28,8 @@ export default class MobileList extends React.Component {
         const newsList = news.length ?
             news.map((newsItem, index) => (
                 <section key={index} className="m_article list-item special_section clearfix">
-                    <HashRouter basename="/details">
-                        <Link to={`/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
+                    <HashRouter basename="/">
+                        <Link to={`details/${newsItem.realtype}/${newsItem.uniquekey}`} target="_blank">
                             <div className="m_article_img">
                                 <img src={newsItem.thumbnail_pic_s} alt={newsItem.title}/>
                             </div>
