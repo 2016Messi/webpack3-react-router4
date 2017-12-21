@@ -10,7 +10,8 @@ export default class PCNewsDetails extends React.Component {
         super();
         this.state = {
             newsItem: '',
-            newsType: ''
+            newsType: '',
+            newsRealtype:''
         }
     }
 
@@ -46,8 +47,9 @@ export default class PCNewsDetails extends React.Component {
             this.props.match.params.uniquekey, myFetchOption)
             .then(response => response.json())
             .then(json => {
-                this.setState({newsItem: json});
-                console.log(json);
+                this.setState({newsItem: json,newsRealtype:json.realtype});
+                console.log(json.realtype);
+
                 document.title = this.state.newsItem.title + +" - React News | React 驱动的新闻平台";
             });
     };
@@ -67,7 +69,7 @@ export default class PCNewsDetails extends React.Component {
                     <Col span={14}>
                         <div className="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
                         <hr/>
-                        <CommonComments uniquekey={this.props.match.params.uniquekey} />
+                        <CommonComments uniquekey={this.props.match.params.uniquekey} newsType={this.state.newsRealtype} />
 
                     </Col>
                     <Col span={6}>

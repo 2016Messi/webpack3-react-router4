@@ -24,8 +24,10 @@ class CommonComments extends React.Component {
             this.props.uniquekey, myFetchOptions)
             .then(response => response.json())
             .then(json => {
+                console.log(json);
                 this.setState({comments: json});
             });
+
     };
 
     handleSubmit(e) {
@@ -40,22 +42,21 @@ class CommonComments extends React.Component {
             "&comment=" + formdata.remark, myFetchOptions)
             .then(response => response.json())
             .then(json => {
-                console.log(json);
-                console.log(1);
                 this.componentDidMount();
             })
     }
+
     addUserCollection(){
         var myFetchOption = {
             method : 'GET'
         };
         if(localStorage.userid){
-            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid="+localStorage.userid+"&uniquekey"+this.props.uniquekey,myFetchOption)
+            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid="+localStorage.userid+
+                "&uniquekey="+this.props.uniquekey+"&newsType="+this.props.newsType,myFetchOption)
                 .then(response => response.json())
                 .then(json =>{
                     //收藏成功以后进行一下全局的提醒
                     notification['success']({message: 'ReactNews提醒', description: '收藏此文章成功'});
-
                 })
         }else{
             notification['error']({message: 'ReactNews提醒', description: '请先登陆账号'});
