@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from 'antd';
-import {Router, Route, Link, BrowserRouter,HashRouter} from 'react-router-dom';
+import { Link,  HashRouter} from 'react-router-dom';
 
 export default class PCNewsImgBlock extends React.Component {
     constructor() {
@@ -46,13 +46,7 @@ export default class PCNewsImgBlock extends React.Component {
             overflow: "hidden",
             textOverflow: "ellipsis"
         };
-        const styleH3H = {
-            width: this.props.imageWidth,
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            color: "red"
-        };
+
         const styleP = {
             width: this.props.imageWidth,
             whiteSpace: "nowrap",

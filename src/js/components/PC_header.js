@@ -1,12 +1,12 @@
 import React from 'react';
 import {Row, Col} from 'antd';
-import {Menu, Icon, Tabs, message, Form, Input, Button, Pagination , Modal} from 'antd';
+import {Menu, Icon, Tabs, message, Form, Input, Button,  Modal} from 'antd';
 
 const FormItem = Form.Item;
 const MenuItem = Menu.Item;
 const TabPane = Tabs.TabPane;
 
-import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
+import { Link, HashRouter} from 'react-router-dom'
 
 class PCHeader extends React.Component {
     constructor() {

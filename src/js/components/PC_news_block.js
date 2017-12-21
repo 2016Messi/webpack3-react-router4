@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from 'antd';
-import {Router, Route, Link, BrowserRouter, HashRouter} from 'react-router-dom';
+import { Link,  HashRouter} from 'react-router-dom';
 export default class PCNewsBlock extends React.Component{
     constructor(){
         super();

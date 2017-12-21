@@ -1,12 +1,9 @@
 import React from 'react';
 
-import {Menu, Col, Tabs, Row, Form, Input, Button, Card, notification} from 'antd';
+import { Col, Row, Form, Input, Button, Card, notification} from 'antd';
 
 const {TextArea} = Input;
 const FormItem = Form.Item;
-const MenuItem = Menu.Item;
-const TabPane = Tabs.TabPane;
-import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
 
 class CommonComments extends React.Component {
     constructor() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col, BackTop} from 'antd';
+import {Row, Col } from 'antd';
 import MobileHeader from './mobile_header';
 import MobileFooter from './mobile_footer';
 import CommonComments from './common_commonts'

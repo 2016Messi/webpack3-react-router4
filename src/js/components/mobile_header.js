@@ -1,11 +1,10 @@
 import React from 'react';
 
-import {Menu, Icon, Tabs, message, Form, Input, Button, Checkbox, Modal} from 'antd';
+import {Icon, Tabs, message, Form, Input, Button, Modal} from 'antd';
 
 const FormItem = Form.Item;
-const MenuItem = Menu.Item;
 const TabPane = Tabs.TabPane;
-import {Router, Route, Link, browserHistory, HashRouter} from 'react-router-dom'
+import {Link, HashRouter} from 'react-router-dom'
 
 class MobileHeader extends React.Component {
     constructor() {
