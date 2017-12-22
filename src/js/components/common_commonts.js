@@ -48,8 +48,8 @@ class CommonComments extends React.Component {
             method : 'GET'
         };
         if(localStorage.userid){
-            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid="+localStorage.userid+
-                "&uniquekey="+this.props.uniquekey+"&newsType="+this.props.newsType,myFetchOption)
+            fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc2&userid="+localStorage.userid+
+                "&uniquekey="+this.props.uniquekey+"&newstype="+this.props.newsType,myFetchOption)
                 .then(response => response.json())
                 .then(json =>{
                     //收藏成功以后进行一下全局的提醒
@@ -83,6 +83,8 @@ class CommonComments extends React.Component {
                                           {...getFieldProps('remark', {initialValue: ''})}/>
                             </FormItem>
                             <Button type="primary" htmlType="submit">提交评论</Button>
+                            {this.props.newsType}
+
                             &nbsp;&nbsp;
                             <Button type="primary" htmlType="button" onClick={this.addUserCollection.bind(this)}>收藏该文章</Button>
                         </Form>

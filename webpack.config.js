@@ -9,7 +9,6 @@ module.exports = {
         path: path.resolve(__dirname, "src/js"),     //打包后的文件存放的地方
         filename: "bundle.js"//打包后输出文件的文件名
     },
-    // devtool: 'false',
     devtool: 'eval-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, "./"),//本地服务器所加载的页面所在的目录
@@ -32,11 +31,5 @@ module.exports = {
                 use: ["style-loader","css-loader"]
             }
         ]
-    },
-    externals:{
-        // 'react':'React',
-        // 'React-Dom': 'ReactDom',
-    //     // "React-Router-Rom":'React-Router-Dom',
-    //     // 'antd':'antd'
     }
 };

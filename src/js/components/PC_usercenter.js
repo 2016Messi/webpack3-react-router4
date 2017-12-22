@@ -13,7 +13,8 @@ export default class PCUserCenter extends React.Component {
             usercollection: '',
             usercomments: '',
             previewImage: '',
-            previewVisible: false
+            previewVisible: false,
+            newsItem:''
         };
     };
 
@@ -26,7 +27,9 @@ export default class PCUserCenter extends React.Component {
             .then(response => response.json())
             .then(json=>{
                 console.log(json);
-                this.setState({usercollection:json})
+                this.setState({
+                    usercollection:json
+                })
             });
 
         fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" + localStorage.userid, myFetchOption)
@@ -61,7 +64,7 @@ export default class PCUserCenter extends React.Component {
         const {usercollection,usercomments} = this.state;
         const usercollectionList = usercollection.length ?
             usercollection.map((uc,index)=>(
-                <Card key={index} title={uc.uniquekey}>
+                <Card key={index} title={uc.uniquekey} extra={<a target="_blank" href={`/#/details/${uc.newstype}/${uc.uniquekey}`}>查看</a>}>
                     <p>{uc.Title}</p>
                 </Card>
             ))
@@ -70,7 +73,8 @@ export default class PCUserCenter extends React.Component {
 
             const usercommentsList = usercomments.length ?
                 usercomments.map((comment,index)=>(
-                    <Card key={index} title={'于 '+comment.datetime+' 评论了文章 '+comment.uniquekey}>
+                    <Card key={index} title={'于 '+comment.datetime+' 评论了文章 '+comment.uniquekey}
+                          extra={<a target="_blank" href={`/#/details/${this.state.newsType}/${uc.uniquekey}`}>查看</a>} >
                         <p>{comment.Comments}</p>
                     </Card>
                 ))

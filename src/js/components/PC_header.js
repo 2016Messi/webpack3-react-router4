@@ -1,6 +1,6 @@
 import React from 'react';
-import {Row, Col} from 'antd';
-import {Menu, Icon, Tabs, message, Form, Input, Button,  Modal} from 'antd';
+import {Row, Col,Menu, Icon, Tabs, message, Form, Input, Button,  Modal} from 'antd';
+
 
 const FormItem = Form.Item;
 const MenuItem = Menu.Item;
