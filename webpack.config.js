@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 
 module.exports = {
     entry: __dirname + "/src/js/root.js",               //已多次提及的唯一入口文件
@@ -30,5 +32,11 @@ module.exports = {
                 use: ["style-loader","css-loader"]
             }
         ]
+    },
+    externals:{
+        // 'react':'React',
+        // 'React-Dom': 'ReactDom',
+    //     // "React-Router-Rom":'React-Router-Dom',
+    //     // 'antd':'antd'
     }
 };
