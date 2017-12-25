@@ -1,7 +1,6 @@
 import React from 'react';
 import {Row, Col} from 'antd';
 import {Tabs, Carousel} from 'antd';
-
 const TabPane = Tabs.TabPane;
 import PCNewsBlock from './PC_news_block.js';
 import PCNewsImgBlock from './PC_news_image_block';

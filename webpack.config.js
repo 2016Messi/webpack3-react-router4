@@ -1,15 +1,25 @@
 const webpack = require('webpack');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const react = require('react');
 
 
 module.exports = {
-    entry: __dirname + "/src/js/root.js",               //已多次提及的唯一入口文件
+    entry: {
+        bundle :__dirname + "/src/js/root.js",               //已多次提及的唯一入口文件
+        vendor: ['react','react-dom','react-router-dom','react-responsive']
+    },
     output: {
         path: path.resolve(__dirname, "src/js"),     //打包后的文件存放的地方
-        filename: "bundle.js"//打包后输出文件的文件名
+        filename: "[name].js",
+
     },
-    devtool: 'eval-source-map',
+    // devtool: 'eval-source-map',
+    devtool: 'false',
+    externals: {
+        // react: 'React'
+    },
     devServer: {
         contentBase: path.resolve(__dirname, "./"),//本地服务器所加载的页面所在的目录
         historyApiFallback: true,//不跳转
@@ -31,5 +41,17 @@ module.exports = {
                 use: ["style-loader","css-loader"]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
+        new UglifyJSPlugin(),
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        new ExtractTextPlugin("bundle.css"),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+            }
+        })
+
+    ]
 };
