@@ -8,7 +8,7 @@ const react = require('react');
 module.exports = {
     entry: {
         bundle :__dirname + "/src/js/root.js",               //已多次提及的唯一入口文件
-        vendor: ['react','react-dom','react-router-dom','react-responsive']
+        // vendor: ['react','react-dom','react-router-dom','react-responsive']
     },
     output: {
         path: path.resolve(__dirname, "src/js"),     //打包后的文件存放的地方
@@ -17,9 +17,6 @@ module.exports = {
     },
     // devtool: 'eval-source-map',
     devtool: 'false',
-    externals: {
-        // react: 'React'
-    },
     devServer: {
         contentBase: path.resolve(__dirname, "./"),//本地服务器所加载的页面所在的目录
         historyApiFallback: true,//不跳转
@@ -43,7 +40,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
+        // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('./src/js/bundle-manifest.json')
+        }),
         new UglifyJSPlugin(),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new ExtractTextPlugin("bundle.css"),

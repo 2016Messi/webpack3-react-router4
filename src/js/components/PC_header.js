@@ -27,7 +27,7 @@ class PCHeader extends React.Component {
 
     componentWillMount() {
         if (localStorage.userid != '') {
-            console.log(localStorage);
+
             this.setState({hasLogined: true});
             this.setState({userNickName: localStorage.userNickName, userid: localStorage.userid});
         }
@@ -41,7 +41,7 @@ class PCHeader extends React.Component {
             method: 'GET'
         };
         var formData = this.props.form.getFieldsValue();
-        console.log(formData);
+
 
         fetch("http://newsapi.gugujiankong.com/Handler.ashx?" +
             "action=" + this.state.action +
@@ -54,7 +54,7 @@ class PCHeader extends React.Component {
             .then(response => response.json())
             .then(json => {
                 this.setState({userNickName: json.NickUserName, userid: json.UserId});
-                console.log(json);
+
                 localStorage.userid = json.UserId;
                 localStorage.userNickName = json.NickUserName;
             });

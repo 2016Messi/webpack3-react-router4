@@ -48,7 +48,7 @@ export default class PCNewsDetails extends React.Component {
             .then(response => response.json())
             .then(json => {
                 this.setState({newsItem: json,newsRealtype:json.realtype});
-                console.log(json.realtype);
+
 
                 document.title = this.state.newsItem.title + +" - React News | React 驱动的新闻平台";
             });
@@ -64,7 +64,6 @@ export default class PCNewsDetails extends React.Component {
         return (
             <div>
                 <PCHeader></PCHeader>
-                {this.state.newsRealtype}
                 <Row>
                     <Col span={2}></Col>
                     <Col span={14}>

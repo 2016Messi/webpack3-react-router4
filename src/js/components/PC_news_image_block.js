@@ -12,7 +12,7 @@ export default class PCNewsImgBlock extends React.Component {
     }
 
     componentWillMount() {
-        console.log(this.props.type);
+
         var myFetchOptions = {
             method: 'GET'
         };

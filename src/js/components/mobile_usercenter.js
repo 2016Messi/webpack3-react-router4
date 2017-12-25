@@ -25,7 +25,7 @@ export default class PCUserCenter extends React.Component {
         fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=getuc&userid=' + localStorage.userid,myFetchOptions)
             .then(response => response.json())
             .then(json=>{
-                console.log(json);
+
                 this.setState({usercollection:json})
             });
 

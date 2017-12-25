@@ -39,7 +39,6 @@ class MobileHeader extends React.Component {
             method: 'GET'
         };
         var formData = this.props.form.getFieldsValue();
-        console.log(this.props.form);
 
         fetch("http://newsapi.gugujiankong.com/Handler.ashx?" +
             "action=" + this.state.action +
@@ -58,7 +57,7 @@ class MobileHeader extends React.Component {
         if (this.state.action == "login") {
             this.setState({hasLogined: true});
         }
-        message.success("请求成功！");
+        message.success("注册成功！");
         this.setModalVisible(false);
     }
 
@@ -101,7 +100,9 @@ class MobileHeader extends React.Component {
         return (
             <div id="mobileheader">
                 <header>
-                    <img src="/src/image/logo.png" alt="logo"/>
+                    <a href="#">
+                        <img src="/src/image/logo.png" alt="logo"/>
+                    </a>
                     <span>Hot News</span>
                     {userShow}
                 </header>

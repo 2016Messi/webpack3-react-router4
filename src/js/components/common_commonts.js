@@ -21,7 +21,7 @@ class CommonComments extends React.Component {
             this.props.uniquekey, myFetchOptions)
             .then(response => response.json())
             .then(json => {
-                console.log(json);
+
                 this.setState({comments: json});
             });
 
@@ -83,9 +83,7 @@ class CommonComments extends React.Component {
                                           {...getFieldProps('remark', {initialValue: ''})}/>
                             </FormItem>
                             <Button type="primary" htmlType="submit">提交评论</Button>
-                            {this.props.newsType}
-
-                            &nbsp;&nbsp;
+                                &nbsp;&nbsp;
                             <Button type="primary" htmlType="button" onClick={this.addUserCollection.bind(this)}>收藏该文章</Button>
                         </Form>
                     </Col>
