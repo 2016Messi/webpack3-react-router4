@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import MediaQuery from 'react-responsive';
 import PCIndex from './components/PC_index';
 import MobileIndex from './components/mobile_index';

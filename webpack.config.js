@@ -1,9 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const react = require('react');
 
+const react = require('react');
 
 module.exports = {
     entry: {
@@ -13,7 +12,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "src/js"),     //打包后的文件存放的地方
         filename: "[name].js",
-
     },
     // devtool: 'eval-source-map',
     devtool: 'false',
@@ -46,13 +44,6 @@ module.exports = {
             manifest: require('./src/js/bundle-manifest.json')
         }),
         new UglifyJSPlugin(),
-        new webpack.optimize.ModuleConcatenationPlugin(),
-        new ExtractTextPlugin("bundle.css"),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-            }
-        })
-
+        new webpack.optimize.ModuleConcatenationPlugin()
     ]
 };
