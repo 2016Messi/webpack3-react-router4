@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const react = require('react');
 
 module.exports = {
@@ -43,7 +43,13 @@ module.exports = {
             context: __dirname,
             manifest: require('./src/js/bundle-manifest.json')
         }),
+        new ExtractTextPlugin("bundle.css"),
         new UglifyJSPlugin(),
-        new webpack.optimize.ModuleConcatenationPlugin()
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+            }
+        })
     ]
 };
