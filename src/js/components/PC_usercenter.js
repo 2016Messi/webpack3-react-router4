@@ -74,7 +74,7 @@ export default class PCUserCenter extends React.Component {
             const usercommentsList = usercomments.length ?
                 usercomments.map((comment,index)=>(
                     <Card key={index} title={'于 '+comment.datetime+' 评论了文章 '+comment.uniquekey}
-                          extra={<a target="_blank" href={`/#/details/${this.state.newsType}/${uc.uniquekey}`}>查看</a>} >
+                          extra={<a target="_blank" href={`/#/details/${this.state.newsType}/${comment.uniquekey}`}>查看</a>} >
                         <p>{comment.Comments}</p>
                     </Card>
                 ))
