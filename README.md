@@ -29,7 +29,7 @@
 # 项目运行
 
 ```
-1. git clone https://github.com/2016Messi/webpack3-react-router4.git
+1. git clone git@github.com:2016Messi/webpack3-react-router4.git
  
 2. 进入项目  cd webpack3-react-router4
 
