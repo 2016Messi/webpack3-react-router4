@@ -1,2 +1,2 @@
-# react-News-demo
-react-demo  可适配pc端移动端
+# 一款基于webpack3+react16搭建的新闻网站
+
