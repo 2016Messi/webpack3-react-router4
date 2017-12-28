@@ -48,3 +48,8 @@
   <img src="https://github.com/2016Messi/webpack3-react-router4/blob/master/screen/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20171228152300.png" width="280"  float="left"/>
   <img src="https://github.com/2016Messi/webpack3-react-router4/blob/master/screen/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20171228152303.png" width="280"  float="left"/>
 </div>
+
+### 关于压缩详细内容请参考
+
+http://www.cnblogs.com/wangyue99599/p/8136108.html
+
