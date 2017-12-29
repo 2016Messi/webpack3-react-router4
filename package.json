@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
-    "server": "webpack-dev-server --open",
+    "server": "webpack-dev-server --contentBase --open",
     "analyz": "NODE_ENV=production npm_config_report=true npm run build"
   },
   "repository": {
